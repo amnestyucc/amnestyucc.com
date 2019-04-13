@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import CommentSection from "./CommentSection";
 
 import "../css/Article.css";
 
@@ -39,6 +40,7 @@ export default class Article extends Component {
             <br />
             <br />
             <p>{data.body}</p>
+            <CommentSection title={data.title} />
           </div>
         </div>
       );

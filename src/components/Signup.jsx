@@ -13,14 +13,23 @@ export default class Signup extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log(user.updateProfile());
+        return user
+          .updateProfile({
+            displayName: document.getElementById("signupName").value
+          })
+          .catch(error => {
+            alert(error.code, " ", error.message);
+          });
+      })
       .catch(function(error) {
-        // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         alert(errorCode + " " + errorMessage);
-        // ...
       });
     document.getElementById("signupEmail").value = "";
+    document.getElementById("signupName").value = "";
     document.getElementById("signupPassword").value = "";
   }
 
@@ -44,8 +53,17 @@ export default class Signup extends Component {
               id="signupEmail"
             />
             <small className="form-text text-muted">
-              We'll never share your email with anyone else.
+              We'll never share your email with anyone.
             </small>
+          </div>
+          <div className="form-group">
+            <label>Username</label>
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Enter username"
+              id="signupName"
+            />
           </div>
 
           <div className="form-group">

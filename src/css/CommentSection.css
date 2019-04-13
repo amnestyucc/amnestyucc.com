@@ -1,0 +1,20 @@
+h5#commentSectionTitle {
+  margin-top: 10%;
+}
+
+form#commentSectionForm {
+  width: 30%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+form#commentSectionForm textarea#commentSectionTextarea {
+  resize: none;
+  width: 90%;
+  height: 120px;
+  border-radius: 10px;
+}
+
+form#commentSectionForm button#commentSectionButton {
+  margin: 0;
+}
