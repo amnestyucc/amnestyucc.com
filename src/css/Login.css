@@ -1,0 +1,22 @@
+h1#title {
+  margin-top: 5vh;
+}
+
+form#loginForm {
+  width: 40%;
+  margin: auto;
+  margin-top: 15vh;
+  background-color: #ededed;
+  padding: 2.4%;
+  border-radius: 10px;
+}
+
+h3#loggedInText {
+  text-align: center;
+  font-family: GravityBook;
+  margin-top: 10vh;
+}
+
+button#logoutButton {
+  margin: auto;
+}

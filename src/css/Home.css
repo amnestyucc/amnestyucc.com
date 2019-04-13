@@ -1,0 +1,67 @@
+@font-face {
+  src: url("../fonts/Gravity-Book.otf");
+  font-family: GravityBook;
+}
+
+@font-face {
+  src: url("../fonts/Gravity-Light.otf");
+  font-family: GravityLight;
+}
+
+div#bgImg {
+  background-image: url("../img/bg-img.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.9;
+  /* position: fixed; */
+  /* background-position: center; */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* padding-bottom: 50%; */
+}
+
+h1 {
+  font-family: GravityBook;
+  text-align: center;
+  color: white;
+}
+
+h1#title {
+  margin-top: 3%;
+}
+
+div#messageBg {
+  background: #f2fcfb;
+  opacity: 0.9;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  /* margin-top: 40%; */
+  margin-top: 80vh;
+  width: 80%;
+}
+
+div#messageBg h5#fromEditorTitle {
+  margin-top: 3%;
+}
+
+div#messageBg p.fromEditorBody {
+  width: 70%;
+  margin: auto;
+  margin-top: 3%;
+  text-align: justify;
+}
+
+div#messageBg div ol#objectivesOl {
+  /* font-family: GravityLight; */
+  list-style-position: inside;
+  text-align: justify;
+  width: 80%;
+  margin: auto;
+  text-align: justify;
+}

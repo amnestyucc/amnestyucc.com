@@ -1,0 +1,19 @@
+.navLink {
+  font-family: GravityLight;
+  color: black;
+  width: 188px;
+  text-align: center;
+  -webkit-transition: all 1.3s ease;
+  transition: all 1.3s ease;
+  margin: 0 auto;
+  margin-top: 2%;
+}
+
+.navLink:hover {
+  background-color: #dbdbdb;
+  width: 200px;
+  color: black;
+  text-align: center;
+  border-radius: 7px;
+  cursor: pointer;
+}

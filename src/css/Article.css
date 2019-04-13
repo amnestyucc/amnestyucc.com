@@ -1,0 +1,22 @@
+div#articleContainer {
+  width: 70%;
+  margin: auto;
+}
+
+h1#title {
+  margin-top: 6vh;
+}
+
+h3#author {
+  text-align: left;
+}
+
+div#imageContainer {
+  text-align: center;
+  width: 100%;
+}
+
+img.articleImage {
+  max-width: 80%;
+  display: inline-block;
+}

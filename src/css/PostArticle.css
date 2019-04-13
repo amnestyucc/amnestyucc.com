@@ -1,0 +1,21 @@
+form#postArticleForm {
+  width: 40%;
+  margin: auto;
+  margin-top: 15vh;
+  background-color: #ededed;
+  padding: 2.4%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+}
+
+#postArticleTextarea {
+  resize: none;
+  border: 1px #ced4da solid;
+  border-radius: 5px;
+  width: 80%;
+  height: 100px;
+}
+
+#postArticleTextarea:focus {
+  outline: 0;
+}

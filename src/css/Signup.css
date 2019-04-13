@@ -1,0 +1,12 @@
+h1#title {
+  margin-top: 6vh;
+}
+
+form#signupForm {
+  width: 40%;
+  margin: auto;
+  margin-top: 15vh;
+  background-color: #ededed;
+  padding: 2.4%;
+  border-radius: 10px;
+}
