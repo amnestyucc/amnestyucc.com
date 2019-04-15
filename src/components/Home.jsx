@@ -11,7 +11,7 @@ export default class Home extends Component {
       <div>
         <div id="bgImg">
           <Navbar component={"Home"} />
-          <h1 id="title">Amnesty International</h1>
+          {/* <h1 id="title">Amnesty International</h1> */}
           <div id="messageBg">
             <h5 id="fromEditorTitle">From the Editor</h5>
             <p className="fromEditorBody">

@@ -21,13 +21,6 @@
   #bgImg {
     padding-top: 300px;
   }
-
-  #title {
-    position: absolute;
-    top: 10%;
-    width: 90%;
-    margin-left: auto !important;
-  }
 }
 
 @media screen and (max-width: 500px) {
@@ -56,11 +49,6 @@ h1 {
   color: white;
 }
 
-h1#title {
-  margin-top: 3%;
-  color: white;
-}
-
 div#messageBg {
   background: #f2fcfb;
   opacity: 0.9;
@@ -69,7 +57,6 @@ div#messageBg {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  /* margin-top: 40%; */
   margin-top: 80vh;
   width: 80%;
 }

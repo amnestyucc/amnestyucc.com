@@ -89,3 +89,14 @@
     top: 20 !important;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .logo {
+    text-align: center;
+  }
+
+  .nav-links {
+    position: absolute !important;
+    top: 100px !important;
+  }
+}
