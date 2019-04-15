@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "react-dom";
 
-import NavbarIndex from "./NavbarIndex";
+import Navbar from "./Navbar";
 
 import "../css/Home.css";
 
@@ -10,7 +10,7 @@ export default class Home extends Component {
     return (
       <div>
         <div id="bgImg">
-          <NavbarIndex />
+          <Navbar component={"Home"} />
           <h1 id="title">Amnesty International</h1>
           <div id="messageBg">
             <h5 id="fromEditorTitle">From the Editor</h5>

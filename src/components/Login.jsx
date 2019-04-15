@@ -62,7 +62,7 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar component={"Login/Signup"} />
         <h1 id="title">Login</h1>
 
         {this.state.user ? (

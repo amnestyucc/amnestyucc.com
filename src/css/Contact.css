@@ -1,0 +1,32 @@
+h1#title {
+  margin-top: 5%;
+}
+
+div#alerts {
+  width: 90%;
+  margin: auto;
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  div.alert {
+    width: 100% !important;
+  }
+}
+
+div.alert {
+  width: 70%;
+  margin: auto;
+  margin-top: 3%;
+  text-align: center;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+div.alert:hover {
+  cursor: pointer;
+}
+
+div#alert1 {
+  color: blue;
+}

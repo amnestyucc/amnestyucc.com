@@ -8,6 +8,38 @@
   font-family: GravityLight;
 }
 
+@media screen and (max-width: 768px) {
+  #messageBg {
+    width: 90% !important;
+    padding: 0px !important;
+  }
+
+  .fromEditorBody {
+    width: 90% !important;
+  }
+
+  #bgImg {
+    padding-top: 300px;
+  }
+
+  #title {
+    position: absolute;
+    top: 10%;
+    width: 90%;
+    margin-left: auto !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #messageBg {
+    margin-top: 170% !important;
+  }
+
+  #bgImg {
+    padding-bottom: 300px;
+  }
+}
+
 div#bgImg {
   background-image: url("../img/bg-img.jpg");
   height: 100%;
@@ -16,11 +48,6 @@ div#bgImg {
   background-size: cover;
   background-attachment: fixed;
   opacity: 0.9;
-  /* position: fixed; */
-  /* background-position: center; */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* padding-bottom: 50%; */
 }
 
 h1 {
@@ -31,6 +58,7 @@ h1 {
 
 h1#title {
   margin-top: 3%;
+  color: white;
 }
 
 div#messageBg {
@@ -58,7 +86,6 @@ div#messageBg p.fromEditorBody {
 }
 
 div#messageBg div ol#objectivesOl {
-  /* font-family: GravityLight; */
   list-style-position: inside;
   text-align: justify;
   width: 80%;

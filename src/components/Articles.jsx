@@ -67,7 +67,7 @@ export default class Articles extends Component {
     if (this.state.response) {
       return (
         <div>
-          <Navbar />
+          <Navbar component={"Articles"} />
           {this.state.admin ? (
             <div>
               <Link to="/postArticle">

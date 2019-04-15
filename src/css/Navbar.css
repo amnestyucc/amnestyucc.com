@@ -1,19 +1,91 @@
-.navLink {
-  font-family: GravityLight;
-  color: black;
-  width: 188px;
-  text-align: center;
-  -webkit-transition: all 1.3s ease;
-  transition: all 1.3s ease;
-  margin: 0 auto;
-  margin-top: 2%;
+.nav {
+  position: fixed;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 90px;
+  background-color: #fafafa;
+  margin-bottom: 2%;
+  width: 100%;
+  box-shadow: 0 8px 6px -6px #999;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  z-index: 99999;
 }
 
-.navLink:hover {
-  background-color: #dbdbdb;
-  width: 200px;
+.active {
+  border-bottom: 1px coral solid;
+}
+
+.logo {
   color: black;
-  text-align: center;
-  border-radius: 7px;
-  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+*:hover {
+  /* color: red; */
+  text-decoration: none !important;
+}
+
+.nav ul.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin: 0;
+  color: black;
+}
+
+.nav ul.nav-links li {
+  list-style: none;
+}
+
+.nav ul.nav-links li a {
+  color: black;
+}
+
+.nav ul.nav-links li a:hover {
+  text-decoration: none;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .burger {
+    display: block !important;
+  }
+
+  .nav-links {
+    position: absolute !important;
+    right: 0px !important;
+    height: 92vh !important;
+    top: 8vh !important;
+    background-color: #fafafa !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 50% !important;
+    transition: all 0.5s ease-in !important;
+    transform: translateX(100%) !important;
+  }
+
+  .nav-links.links-active {
+    transition: all 0.5s ease !important;
+    transform: translateX(0%) !important;
+    box-shadow: inset -7px 0px 7px -1px rgba(153, 9, NaN, 1) !important;
+    width: 100% !important;
+    position: fixed !important;
+    top: 20 !important;
+  }
 }

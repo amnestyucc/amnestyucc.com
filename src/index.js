@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Home from "./components/Home";
 import Articles from "./components/Articles";
+import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import PostArticle from "./components/PostArticle";
@@ -16,6 +17,7 @@ const routing = (
   <Router>
     <Route exact path="/" component={Home} />
     <Route exact path="/articles" component={Articles} />
+    <Route exact path="/contact" component={Contact} />
     <Route path="/login" component={Login} />
     <Route path="/signup" component={Signup} />
     <Route path="/postArticle" component={PostArticle} />

@@ -36,7 +36,7 @@ export default class Signup extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar component={"Login/Signup"} />
         <h1 id="title">Signup</h1>
 
         <form id="signupForm">
