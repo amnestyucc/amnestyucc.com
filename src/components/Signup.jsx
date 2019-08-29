@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
-import firebase from "./Firebase/firebase";
+// import firebase from "./Firebase/firebase";
+import { createUser } from "../helpers/auth.js";
 
 import "../css/Signup.css";
 
@@ -9,25 +10,10 @@ export default class Signup extends Component {
   signup() {
     let email = document.getElementById("signupEmail").value;
     let password = document.getElementById("signupPassword").value;
+    let name = document.getElementById("signupName").value;
 
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(user => {
-        console.log(user.updateProfile());
-        return user
-          .updateProfile({
-            displayName: document.getElementById("signupName").value
-          })
-          .catch(error => {
-            alert(error.code, " ", error.message);
-          });
-      })
-      .catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        alert(errorCode + " " + errorMessage);
-      });
+    createUser(email, password, name);
+
     document.getElementById("signupEmail").value = "";
     document.getElementById("signupName").value = "";
     document.getElementById("signupPassword").value = "";

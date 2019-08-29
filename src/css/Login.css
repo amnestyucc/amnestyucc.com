@@ -1,8 +1,8 @@
 h1#title {
-  margin-top: 5vh;
+  margin-top: 20vh !important;
 }
 
-form#loginForm {
+#loginForm {
   width: 40%;
   margin: auto;
   margin-top: 15vh;
@@ -19,4 +19,10 @@ h3#loggedInText {
 
 button#logoutButton {
   margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  #loginForm {
+    width: 90% !important;
+  }
 }

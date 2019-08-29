@@ -19,17 +19,17 @@
   }
 
   #bgImg {
-    padding-top: 300px;
+    padding-top: 400px;
   }
 }
 
 @media screen and (max-width: 500px) {
   #messageBg {
-    margin-top: 170% !important;
+    margin-top: 210% !important;
   }
 
   #bgImg {
-    padding-bottom: 300px;
+    padding-bottom: 520px !important;
   }
 }
 
@@ -41,6 +41,7 @@ div#bgImg {
   background-size: cover;
   background-attachment: fixed;
   opacity: 0.9;
+  padding-bottom: 500px;
 }
 
 h1 {
@@ -57,8 +58,9 @@ div#messageBg {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-  margin-top: 80vh;
+  margin-top: 155vh;
   width: 80%;
+  /* padding-bottom: 500px; */
 }
 
 div#messageBg h5#fromEditorTitle {

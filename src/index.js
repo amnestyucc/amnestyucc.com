@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+// import App from "./App";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home";
 import Articles from "./components/Articles";
@@ -12,17 +14,21 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import PostArticle from "./components/PostArticle";
 import Article from "./components/Article";
+import NotFound from "./components/NotFound";
 
 const routing = (
-  <Router>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/articles" component={Articles} />
-    <Route exact path="/contact" component={Contact} />
-    <Route path="/login" component={Login} />
-    <Route path="/signup" component={Signup} />
-    <Route path="/postArticle" component={PostArticle} />
-    <Route path="/articles/:handle" component={Article} />
-  </Router>
+	<Router>
+		<Switch>
+			<Route exact path="/" component={Home} />
+			<Route exact path="/articles" component={Articles} />
+			<Route exact path="/contact" component={Contact} />
+			<Route path="/login" component={Login} />
+			<Route path="/signup" component={Signup} />
+			<Route path="/postArticle" component={PostArticle} />
+			<Route path="/articles/:handle" component={Article} />
+			<Route component={NotFound} />
+		</Switch>
+	</Router>
 );
 
 ReactDOM.render(routing, document.getElementById("root"));

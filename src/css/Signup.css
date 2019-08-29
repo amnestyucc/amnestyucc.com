@@ -10,3 +10,9 @@ form#signupForm {
   padding: 2.4%;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 768px) {
+  #signupForm {
+    width: 90% !important;
+  }
+}

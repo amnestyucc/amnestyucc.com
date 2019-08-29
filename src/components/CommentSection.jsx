@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import firebase from "./Firebase/firebase";
 import Comment from "./Comment";
 import $ from "jquery";
+import { timeSince } from "../helpers/comment.js";
 
 import "../css/CommentSection.css";
 
-var user = null;
 var commentsData = [];
 var count = 0;
 
@@ -23,7 +23,6 @@ export default class CommentSection extends Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged(u => {
       if (u) {
-        user = u;
         this.setState({
           user: true
         });
@@ -33,7 +32,8 @@ export default class CommentSection extends Component {
         });
       }
     });
-
+    var aDay = 1 * 1 * 1 * 2000;
+    console.log(timeSince(new Date(Date.now() - aDay)));
     this.showComments();
   }
 
@@ -45,9 +45,10 @@ export default class CommentSection extends Component {
 
   showComments = () => {
     this.clearDiv(function() {
-      console.log("Cleared");
+      console.log("CLEARED COMMENTS");
     });
     count = 0;
+    commentsData = [];
 
     firebase
       .database()
@@ -71,7 +72,6 @@ export default class CommentSection extends Component {
             this.setState({
               response: true
             });
-            console.log("Done looping");
           }
         });
       });
@@ -79,22 +79,32 @@ export default class CommentSection extends Component {
 
   postComment = () => {
     let comment = document.getElementById("commentSectionTextarea").value;
-    let username = user.displayName;
-    let today = new Date();
-    let mm = today.getMonth() + 1;
-    let dd = today.getDate();
-    let yyyy = today.getFullYear();
-    let timestamp = mm + "/" + dd + "/" + yyyy;
-
+    let uid = firebase.auth().currentUser.uid;
+    var name = null;
     firebase
       .database()
-      .ref("/Comments/" + this.props.title)
-      .push([comment, username, timestamp])
+      .ref("/Users/")
+      .once("value")
+      .then(snapshot => {
+        snapshot.forEach(childSnapshot => {
+          if (childSnapshot.val().uid === uid) {
+            name = childSnapshot.val().name;
+          }
+        });
+      })
       .then(() => {
-        this.showComments();
-      });
+        let today = new Date();
+        let dateUnformatted = Date.now();
+        firebase
+          .database()
+          .ref("/Comments/" + this.props.title)
+          .push([comment, name, dateUnformatted])
+          .then(() => {
+            this.showComments();
+          });
 
-    document.getElementById("commentSectionTextarea").value = "";
+        document.getElementById("commentSectionTextarea").value = "";
+      });
   };
 
   render() {
@@ -126,7 +136,12 @@ export default class CommentSection extends Component {
               <div>
                 {commentsData.map((data, i) => {
                   return (
-                    <Comment key={i} comment={data[0]} timestamp={data[2]} />
+                    <Comment
+                      key={i}
+                      comment={data[0]}
+                      name={data[1]}
+                      timestamp={timeSince(data[2])}
+                    />
                   );
                 })}
               </div>
@@ -134,11 +149,6 @@ export default class CommentSection extends Component {
               <h5>Loading Comments...</h5>
             )}
           </div>
-          {/* <div id="comments">
-            {commentsData.map((data, i) => {
-              return <Comment key={i} comment={data[0]} />;
-            })}
-          </div> */}
         </div>
       );
     } else {

@@ -50,7 +50,7 @@ export default class PostArticle extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar component={"Articles"} />
 
         <h1 id="title">Post Article</h1>
 

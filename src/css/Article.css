@@ -16,7 +16,33 @@ div#imageContainer {
   width: 100%;
 }
 
+@media screen and (max-width: 500px) {
+  #imageContainer {
+    width: 100% !important;
+  }
+
+  .articleImage {
+    width: 100% !important;
+  }
+  /* .articleImage {
+    max-width: 100% !important;
+    width: 90% !important;
+  } */
+}
+
 img.articleImage {
   max-width: 80%;
   display: inline-block;
+}
+
+div.bodyContainer {
+  width: 100%;
+}
+
+p.body {
+  text-align: justify;
+  width: 90%;
+  /* white-space: nowrap !important; */
+  /* word-wrap: break-word; */
+  margin: auto;
 }

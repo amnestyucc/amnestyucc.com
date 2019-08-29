@@ -39,6 +39,7 @@ export default class Article extends Component {
       return (
         <div>
           <Link
+            className="previewLink"
             to={{
               pathname: path,
               state: {
@@ -49,7 +50,7 @@ export default class Article extends Component {
               }
             }}
           >
-            <div>
+            <div className="previewDiv">
               <img
                 src={url}
                 alt={this.props.title}

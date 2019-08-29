@@ -14,4 +14,10 @@ h1#title {
 div#articlePreviewsContainer {
   text-align: center;
   margin-top: 9vh;
+  /* margin-left: auto; */
+}
+
+div.previewDiv {
+  width: 30%;
+  margin: auto;
 }

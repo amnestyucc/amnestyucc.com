@@ -1,5 +1,16 @@
 img.articlePreviewImage {
   max-width: 300px;
   border-radius: 100px;
-  display: inline-block;
+  /* display: inline-block; */
 }
+
+/* .previewLink {
+  width: 20%;
+  display: inline-block;
+} */
+
+/* div.previewDiv {
+  width: 30%;
+  display: inline-block;
+  /* margin: auto; 
+}*/
