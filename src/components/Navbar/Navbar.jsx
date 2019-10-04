@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Burger from "@animated-burgers/burger-slip";
-import "@animated-burgers/burger-slip/dist/styles.css";
-import { Slider } from 'react-burgers'
-// import Burger from '@animated-burgers/{burger-style}';
-// import '@animated-burgers/{burger-style}/dist/styles.css' 
 
-import { active, navTitle } from "./styles.module.scss";
-import { throwStatement } from "@babel/types";
+import { active, navTitle, burger, bar1, bar2, bar3, change, ulActive } from "./styles.module.scss";
 
 const navlinkClassNames = [];
 
@@ -35,14 +29,15 @@ const Navbar = ({ activeLink }) => {
 	}, [activeLink]);
 
 	function burgerClicked() {
-		
+		document.getElementById(burger).classList.toggle(change);
+		document.getElementById("list").classList.toggle(ulActive);
 	}
 
 	return (
 		<div>
 			<nav>
 				<h1 id={navTitle}>Amnesty UCC</h1>
-				<ul>
+				<ul id="list">
 					<li>
 						<Link to="/" className={homeIsActive ? active : navlinkClassNames}>
 							Home
@@ -58,8 +53,11 @@ const Navbar = ({ activeLink }) => {
 						<Link to="/" className={loginIsActive ? active : navlinkClassNames}>Login/Signup</Link>
 					</li>
 				</ul>
-				{/* <Slider onClick={burgerClicked}></Slider> */}
-				<Burger isOpen={false} onClick={burgerClicked} />
+				<div id={burger} onClick={burgerClicked} >
+					<div id={bar1}></div>
+					<div id={bar2}></div>
+					<div id={bar3}></div>
+				</div>
 			</nav>
 		</div>
 	);
