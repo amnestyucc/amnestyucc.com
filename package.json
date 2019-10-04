@@ -3,16 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@animated-burgers/burger-slip": "^1.1.2",
-    "classnames": "^2.2.6",
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
-    "react-burgers": "^1.3.0",
     "react-dom": "^16.9.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
-    "redux": "^4.0.4",
     "sass": "^1.23.0-module.beta.1"
   },
   "scripts": {
