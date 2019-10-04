@@ -1,7 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { active, navTitle, burger, bar1, bar2, bar3, change, ulActive } from "./styles.module.scss";
+import {
+	active,
+	navTitle,
+	burger,
+	bar1,
+	bar2,
+	bar3,
+	change,
+	ulActive,
+	navListItems
+} from "./styles.module.scss";
+import "../../styles/styles.scss";
 
 const navlinkClassNames = [];
 
@@ -21,8 +32,10 @@ const Navbar = ({ activeLink }) => {
 				break;
 			case "Contact":
 				setContactIsActive(true);
+				break;
 			case "Login":
 				setLoginIsActive(true);
+				break;
 			default:
 				setHomeIsActive(true);
 		}
@@ -38,22 +51,34 @@ const Navbar = ({ activeLink }) => {
 			<nav>
 				<h1 id={navTitle}>Amnesty UCC</h1>
 				<ul id="list">
-					<li>
+					<li className={navListItems}>
 						<Link to="/" className={homeIsActive ? active : navlinkClassNames}>
 							Home
 						</Link>
 					</li>
-					<li>
-						<Link to="/" className={articlesIsActive ? active : navlinkClassNames}>Articles</Link>
+					<li className={navListItems}>
+						<Link
+							to="/"
+							className={articlesIsActive ? active : navlinkClassNames}
+						>
+							Articles
+						</Link>
 					</li>
-					<li>
-						<Link to="/" className={contactIsActive ? active : navlinkClassNames}>Contact</Link>
+					<li className={navListItems}>
+						<Link
+							to="/"
+							className={contactIsActive ? active : navlinkClassNames}
+						>
+							Contact
+						</Link>
 					</li>
-					<li>
-						<Link to="/" className={loginIsActive ? active : navlinkClassNames}>Login/Signup</Link>
+					<li className={navListItems}>
+						<Link to="/" className={loginIsActive ? active : navlinkClassNames}>
+							Login/Signup
+						</Link>
 					</li>
 				</ul>
-				<div id={burger} onClick={burgerClicked} >
+				<div id={burger} onClick={burgerClicked}>
 					<div id={bar1}></div>
 					<div id={bar2}></div>
 					<div id={bar3}></div>

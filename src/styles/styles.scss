@@ -1,15 +1,23 @@
 @import "./fonts.scss";
 @import "./constants.scss";
 
-h1, h2, h3 {
-    font-family: GB;
+h1,
+h2,
+h3 {
+	font-family: GB;
 }
 
-h4, h5, p, li, ul, ol, a {
-    font-family: GL;
+h4,
+h5,
+p,
+li,
+ul,
+ol,
+a {
+	font-family: GL;
 }
 
 .title {
-    text-align: center;
-    font-size: $title-font-size;
+	text-align: center;
+	font-size: $title-font-size;
 }
