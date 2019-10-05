@@ -11,7 +11,7 @@ import {
 	signupLink
 } from "./styles.module.scss";
 
-const Login = () => {
+const Login = ({ login }) => {
 	return (
 		<div>
 			<Navbar />
@@ -23,13 +23,28 @@ const Login = () => {
 					Don't have an account? Sign up here!
 				</Link>
 
-				<label className={loginLabel}>Username:</label>
-				<input type="text" className={loginInput}></input>
 				<label className={loginLabel}>Email:</label>
-				<input type="email" className={loginInput}></input>
+				<input type="email" className={loginInput} id="emailInput"></input>
 				<label className={loginLabel}>Password:</label>
-				<input type="password" className={loginInput}></input>
-				<button id={loginButton}>Login</button>
+				<input
+					type="password"
+					className={loginInput}
+					id="passwordInput"
+				></input>
+				<button
+					id={loginButton}
+					onClick={() => {
+						login(
+							document.getElementById("emailInput").value,
+							document.getElementById("passwordInput").value
+						);
+						document.getElementById("emailInput").value = "";
+						document.getElementById("passwordInput").value = "";
+					}}
+					type="button"
+				>
+					Login
+				</button>
 			</form>
 		</div>
 	);

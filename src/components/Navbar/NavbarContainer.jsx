@@ -4,33 +4,38 @@ import { withRouter } from "react-router-dom";
 import Navbar from "./Navbar";
 
 class NavbarContainer extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      activeLink: null
-    };
-  }
+	constructor() {
+		super();
+		this.state = {
+			activeLink: null
+		};
+	}
 
-  componentDidMount() {
-    const route = this.props.location.pathname;
-    this.populateActiveLink(route);
-  }
+	componentDidMount() {
+		const route = this.props.location.pathname;
+		this.populateActiveLink(route);
+	}
 
-  populateActiveLink = route => {
-    switch (route) {
-      case "/":
-        console.log("hi");
-        this.setState({ activeLink: "Home" });
-        break;
-      default:
-        this.setState({ activeLink: "Home" });
-    }
-  };
+	populateActiveLink = route => {
+		switch (route) {
+			case "/":
+				this.setState({ activeLink: "Home" });
+				break;
+			case "login":
+				this.setState({ activeLink: "Login" });
+				break;
+			case "signup":
+				this.setState({ activeLink: "Signup" });
+				break;
+			default:
+				this.setState({ activeLink: "Home" });
+		}
+	};
 
-  render() {
-    const { activeLink } = this.state;
-    return <Navbar activeLink={activeLink}></Navbar>;
-  }
+	render() {
+		const { activeLink } = this.state;
+		return <Navbar activeLink={activeLink}></Navbar>;
+	}
 }
 
 const Nav = withRouter(NavbarContainer);
