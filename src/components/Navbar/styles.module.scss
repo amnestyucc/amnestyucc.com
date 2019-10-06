@@ -11,6 +11,7 @@ nav {
 	background-color: #ececec;
 	height: 10vh;
 	margin-bottom: 7vh;
+	z-index: 9999;
 }
 
 ul {
@@ -50,6 +51,7 @@ a {
 		justify-content: space-evenly;
 		background-color: #ececec;
 		opacity: 0.95;
+		z-index: 9999;
 	}
 
 	.ulActive {

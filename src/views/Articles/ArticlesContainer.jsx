@@ -1,5 +1,6 @@
 import React from "react";
 
+import { withRouter } from "react-router-dom";
 import { title } from "./styles.module.scss";
 import { admins } from "../../utils/admins";
 import { auth, db } from "../../utils/firebase";
@@ -48,7 +49,16 @@ export default class ArticlesContainer extends React.Component {
 		}
 	};
 
+	postArticle = () => {
+		this.props.history.push("/postArticle");
+	};
+
 	render() {
-		return <Articles admin={this.state.admin}></Articles>;
+		return (
+			<Articles
+				admin={this.state.admin}
+				postArticle={this.postArticle}
+			></Articles>
+		);
 	}
 }

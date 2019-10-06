@@ -10,6 +10,7 @@ const routing = (
 			<Route path="/login" component={views.Login}></Route>
 			<Route path="/signup" component={views.Signup}></Route>
 			<Route path="/articles" component={views.Articles}></Route>
+			<Route path="/postArticle" component={views.PostArticle}></Route>
 			<Route component={views.NotFound}></Route>
 		</Switch>
 	</Router>

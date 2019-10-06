@@ -18,7 +18,9 @@ export default class Articles extends React.Component {
 				{this.props.admin ? (
 					<div>
 						<h1 id={adminTitle}>Welcome Admin</h1>
-						<button id={adminButton}>Post Article</button>
+						<button id={adminButton} onClick={this.props.postArticle}>
+							Post Article
+						</button>
 					</div>
 				) : (
 					<div></div>

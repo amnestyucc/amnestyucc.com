@@ -1,16 +1,18 @@
 // import HomeContainer from "./Home-test/HomeContainer";
 import Home from "./Home/Home";
-import Login from "./Login/LoginContainer";
-import Signup from "./Signup/SignupContainer";
-import Articles from "./Articles/ArticlesContainer";
+import LoginContainer from "./Login/LoginContainer";
+import SignupContainer from "./Signup/SignupContainer";
+import ArticlesContainer from "./Articles/ArticlesContainer";
+import PostArticleContainer from "./PostArticle/PostArticleContainer";
 
 import NotFound from "./NotFound";
 
 const views = {
 	Home: Home,
-	Login: Login,
-	Signup: Signup,
-	Articles: Articles,
+	Login: LoginContainer,
+	Signup: SignupContainer,
+	Articles: ArticlesContainer,
+	PostArticle: PostArticleContainer,
 	NotFound: NotFound
 };
 
