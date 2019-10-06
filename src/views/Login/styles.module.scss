@@ -57,3 +57,22 @@
 	color: blue;
 	text-align: center;
 }
+
+#loggedInMessageContainer {
+	width: 40%;
+	height: 20vh;
+	opacity: 0.9;
+	background-color: #ececec;
+	margin: auto;
+	margin-top: 5vh;
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-direction: column;
+}
+
+#logoutButton {
+	color: blue;
+	cursor: pointer;
+}
