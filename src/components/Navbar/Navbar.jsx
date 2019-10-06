@@ -58,7 +58,7 @@ const Navbar = ({ activeLink }) => {
 					</li>
 					<li className={navListItems}>
 						<Link
-							to="/"
+							to="/articles"
 							className={articlesIsActive ? active : navlinkClassNames}
 						>
 							Articles
