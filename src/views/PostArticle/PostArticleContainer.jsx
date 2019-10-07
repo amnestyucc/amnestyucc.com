@@ -1,7 +1,7 @@
 import React from "react";
 
 import PostArticle from "./PostArticle";
-import { auth, db } from "../../utils/firebase";
+import { auth, db, storage } from "../../utils/firebase";
 import { admins } from "../../utils/admins";
 
 export default class PostArticleContainer extends React.Component {
@@ -10,7 +10,7 @@ export default class PostArticleContainer extends React.Component {
 
 		this.state = {
 			user: null,
-			admin: false
+			image: null
 		};
 	}
 
@@ -40,9 +40,44 @@ export default class PostArticleContainer extends React.Component {
 		}
 	};
 
+	onFileChange = e => {
+		let file = e.target.files[0];
+		this.setState({
+			image: file.name,
+			file: file
+		});
+	};
+
+	postArticle = data => {
+		let article = {
+			title: data.title,
+			author: data.author,
+			image: this.state.image,
+			body: data.body
+		};
+
+		db.ref("/articles/").push(article);
+
+		var imageRef = storage.ref("/images/" + this.state.image);
+		var uploadTask = imageRef.put(this.state.file);
+
+		uploadTask.on(
+			"state_changed",
+			snapshot => {},
+			error => {
+				alert(error.code, error.message);
+			},
+			() => {}
+		);
+	};
+
 	render() {
 		return (
-			<PostArticle redirectNonAdmins={this.redirectNonAdmins}></PostArticle>
+			<PostArticle
+				redirectNonAdmins={this.redirectNonAdmins}
+				postArticle={this.postArticle}
+				onFileChange={this.onFileChange}
+			></PostArticle>
 		);
 	}
 }
