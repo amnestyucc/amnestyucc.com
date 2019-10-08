@@ -3,7 +3,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { title } from "./styles.module.scss";
 import { admins } from "../../utils/admins";
-import { auth, db } from "../../utils/firebase";
+import { auth, db, storage } from "../../utils/firebase";
 import Articles from "./Articles";
 
 export default class ArticlesContainer extends React.Component {
@@ -12,7 +12,9 @@ export default class ArticlesContainer extends React.Component {
 
 		this.state = {
 			user: null,
-			admin: false
+			admin: false,
+			articles: null,
+			response: false
 		};
 	}
 
@@ -24,6 +26,8 @@ export default class ArticlesContainer extends React.Component {
 				});
 			}
 		});
+
+		this.getArticles();
 	}
 
 	checkIfAdmin = async () => {
@@ -53,12 +57,49 @@ export default class ArticlesContainer extends React.Component {
 		this.props.history.push("/postArticle");
 	};
 
+	getArticles = () => {
+		let articles = [];
+		db.ref("/articles/")
+			.once("value")
+			.then(snapshot => {
+				const numChildren = snapshot.numChildren();
+				let count = 0;
+				snapshot.forEach(article => {
+					count++;
+					const Article = article.val();
+					storage
+						.ref("/images/" + Article.image)
+						.getDownloadURL()
+						.then(url => {
+							const articleobj = {
+								title: Article.title,
+								imageUrl: url
+							};
+							articles.push(articleobj);
+						})
+						.then(() => {
+							if (count === numChildren) {
+								this.setState({
+									articles: articles,
+									response: true
+								});
+							}
+						});
+				});
+			});
+	};
+
 	render() {
-		return (
-			<Articles
-				admin={this.state.admin}
-				postArticle={this.postArticle}
-			></Articles>
-		);
+		if (this.state.response) {
+			return (
+				<Articles
+					admin={this.state.admin}
+					postArticle={this.postArticle}
+					articles={this.state.articles}
+				></Articles>
+			);
+		} else {
+			return <h1>Loading...</h1>;
+		}
 	}
 }
