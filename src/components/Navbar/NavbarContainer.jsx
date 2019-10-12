@@ -17,15 +17,19 @@ class NavbarContainer extends React.Component {
 	}
 
 	populateActiveLink = route => {
-		switch (route) {
-			case "/":
-				this.setState({ activeLink: "Home" });
-				break;
+		// console.log(route.replace("/", ""));
+		switch (route.replace("/", "")) {
 			case "login":
 				this.setState({ activeLink: "Login" });
 				break;
 			case "signup":
 				this.setState({ activeLink: "Signup" });
+				break;
+			case "articles":
+				this.setState({ activeLink: "Articles" });
+				break;
+			case "":
+				this.setState({ activeLink: "Home" });
 				break;
 			default:
 				this.setState({ activeLink: "Home" });

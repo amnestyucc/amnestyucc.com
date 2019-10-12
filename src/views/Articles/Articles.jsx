@@ -1,4 +1,6 @@
 import React from "react";
+import "bootstrap";
+import { Link } from "react-router-dom";
 
 import Navbar from "../../components/Navbar/NavbarContainer";
 import {
@@ -10,6 +12,24 @@ import {
 	articlePreviewTitle,
 	articlePreview
 } from "./styles.module.scss";
+
+const cardStyle = {
+	textAlign: "center",
+	padding: "20px",
+	width: "25vw"
+};
+
+const cardBodyStyle = {
+	color: "white"
+};
+
+const cardTitleStyle = {
+	fontSize: "2em"
+};
+
+const cardImageStyle = {
+	width: "100%"
+};
 
 export default class Articles extends React.Component {
 	constructor(props) {
@@ -26,9 +46,20 @@ export default class Articles extends React.Component {
 				<div id={articlePreviewContainer}>
 					{this.props.articles.map((article, i) => {
 						return (
-							<div key={i} id={articlePreview}>
-								<img src={article.imageUrl} id={articlePreviewImg}></img>
-								<h3 id={articlePreviewTitle}>{article.title}</h3>
+							<div className="card" key={i} style={cardStyle}>
+								<Link to="/">
+									<img
+										className="card-img-top"
+										src={article.imageUrl}
+										alt="Card image cap"
+										style={cardImageStyle}
+									></img>
+									<div className="card-body" style={cardBodyStyle}>
+										<h5 className="card-title" style={cardTitleStyle}>
+											{article.title}
+										</h5>
+									</div>
+								</Link>
 							</div>
 						);
 					})}
