@@ -15,20 +15,28 @@ import {
 
 const cardStyle = {
 	textAlign: "center",
-	padding: "20px",
-	width: "25vw"
+	width: "25vw",
+	backgroundColor: "#ececec",
+	borderRadius: "5px"
 };
 
 const cardBodyStyle = {
-	color: "white"
+	color: "black",
+	display: "flex",
+	justifyContent: "space-evenly",
+	flexDirection: "column",
+	height: "15vh"
 };
 
 const cardTitleStyle = {
-	fontSize: "2em"
+	fontSize: "1.5em"
 };
 
 const cardImageStyle = {
-	width: "100%"
+	width: "100%",
+	borderRadius: "5px",
+	borderBottomRightRadius: "0px",
+	borderBottomLeftRadius: "0px"
 };
 
 export default class Articles extends React.Component {
@@ -46,8 +54,8 @@ export default class Articles extends React.Component {
 				<div id={articlePreviewContainer}>
 					{this.props.articles.map((article, i) => {
 						return (
-							<div className="card" key={i} style={cardStyle}>
-								<Link to="/">
+							<Link to="/">
+								<div className="card" key={i} style={cardStyle}>
 									<img
 										className="card-img-top"
 										src={article.imageUrl}
@@ -58,9 +66,13 @@ export default class Articles extends React.Component {
 										<h5 className="card-title" style={cardTitleStyle}>
 											{article.title}
 										</h5>
+										{/* <br></br> */}
+										<p>By: {article.author}</p>
+										{/* <br></br> */}
+										<p>{article.date}</p>
 									</div>
-								</Link>
-							</div>
+								</div>
+							</Link>
 						);
 					})}
 				</div>

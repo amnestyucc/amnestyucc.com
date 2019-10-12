@@ -73,7 +73,9 @@ export default class ArticlesContainer extends React.Component {
 						.then(url => {
 							const articleobj = {
 								title: Article.title,
-								imageUrl: url
+								imageUrl: url,
+								date: Article.date,
+								author: Article.author
 							};
 							articles.push(articleobj);
 						})

@@ -52,6 +52,7 @@ export default class PostArticleContainer extends React.Component {
 		let article = {
 			title: data.title,
 			author: data.author,
+			date: data.date,
 			image: this.state.image,
 			body: data.body
 		};

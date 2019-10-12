@@ -41,6 +41,8 @@ export default class PostArticle extends React.Component {
 						required
 						id="author"
 					></input>
+					<label className={postArticleLabel}>Date</label>
+					<input type="date" className={postArticleInput} id="date"></input>
 					<label className={postArticleLabel}>Image</label>
 					<input
 						type="file"
@@ -58,6 +60,7 @@ export default class PostArticle extends React.Component {
 							const data = {
 								title: document.getElementById("title").value,
 								author: document.getElementById("author").value,
+								date: document.getElementById("date").value,
 								image: document.getElementById("image"),
 								body: document.getElementById("body").value
 							};
