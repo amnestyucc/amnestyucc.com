@@ -35,12 +35,12 @@
 	font-family: GL;
 }
 
-#postArticleTextarea {
-	height: 30%;
-	resize: none;
+.postArticleTextarea {
+	height: 20%;
 	border: 1px solid black;
 	padding: 5px;
 	font-family: GL;
+	resize: none;
 }
 
 #postArticleButton {

@@ -54,8 +54,8 @@ export default class Articles extends React.Component {
 				<div id={articlePreviewContainer}>
 					{this.props.articles.map((article, i) => {
 						return (
-							<Link to="/">
-								<div className="card" key={i} style={cardStyle}>
+							<Link to={"/articles/" + article.url} key={i}>
+								<div className="card" style={cardStyle}>
 									<img
 										className="card-img-top"
 										src={article.imageUrl}
@@ -66,9 +66,7 @@ export default class Articles extends React.Component {
 										<h5 className="card-title" style={cardTitleStyle}>
 											{article.title}
 										</h5>
-										{/* <br></br> */}
 										<p>By: {article.author}</p>
-										{/* <br></br> */}
 										<p>{article.date}</p>
 									</div>
 								</div>

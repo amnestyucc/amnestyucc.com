@@ -5,6 +5,7 @@ import { title } from "./styles.module.scss";
 import { admins } from "../../utils/admins";
 import { auth, db, storage } from "../../utils/firebase";
 import Articles from "./Articles";
+import { asciiToHex, hexToAscii } from "../../utils/helpers";
 
 export default class ArticlesContainer extends React.Component {
 	constructor(props) {
@@ -57,12 +58,24 @@ export default class ArticlesContainer extends React.Component {
 		this.props.history.push("/postArticle");
 	};
 
+	getUrl = (title, author) => {
+		const titleHex = asciiToHex(title);
+		const authorHex = asciiToHex(author);
+		return titleHex + authorHex;
+	};
+
 	getArticles = () => {
 		let articles = [];
 		db.ref("/articles/")
 			.once("value")
 			.then(snapshot => {
 				const numChildren = snapshot.numChildren();
+				if (numChildren === 0) {
+					this.setState({
+						response: true,
+						articles: []
+					});
+				}
 				let count = 0;
 				snapshot.forEach(article => {
 					count++;
@@ -75,7 +88,8 @@ export default class ArticlesContainer extends React.Component {
 								title: Article.title,
 								imageUrl: url,
 								date: Article.date,
-								author: Article.author
+								author: Article.author,
+								url: this.getUrl(Article.title, Article.author)
 							};
 							articles.push(articleobj);
 						})

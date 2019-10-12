@@ -52,7 +52,11 @@ export default class PostArticle extends React.Component {
 						onChange={this.props.onFileChange}
 					></input>
 					<label className={postArticleLabel}>Body</label>
-					<textarea id={postArticleTextarea} required id="body"></textarea>
+					<textarea
+						className={postArticleTextarea}
+						required
+						id="body"
+					></textarea>
 
 					<button
 						id={postArticleButton}
