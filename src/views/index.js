@@ -4,6 +4,7 @@ import LoginContainer from "./Login/LoginContainer";
 import SignupContainer from "./Signup/SignupContainer";
 import ArticlesContainer from "./Articles/ArticlesContainer";
 import PostArticleContainer from "./PostArticle/PostArticleContainer";
+import ArticleContainer from "./Article/ArticleContainer";
 
 import NotFound from "./NotFound";
 
@@ -13,6 +14,7 @@ const views = {
 	Signup: SignupContainer,
 	Articles: ArticlesContainer,
 	PostArticle: PostArticleContainer,
+	Article: ArticleContainer,
 	NotFound: NotFound
 };
 

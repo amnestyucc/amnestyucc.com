@@ -54,7 +54,19 @@ export default class Articles extends React.Component {
 				<div id={articlePreviewContainer}>
 					{this.props.articles.map((article, i) => {
 						return (
-							<Link to={"/articles/" + article.url} key={i}>
+							<Link
+								to={{
+									pathname: "/articles/" + article.url,
+									state: {
+										title: article.title,
+										author: article.author,
+										date: article.date,
+										imageUrl: article.imageUrl,
+										body: article.body
+									}
+								}}
+								key={i}
+							>
 								<div className="card" style={cardStyle}>
 									<img
 										className="card-img-top"

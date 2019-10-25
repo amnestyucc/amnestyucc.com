@@ -9,7 +9,8 @@ const routing = (
 			<Route exact path="/" component={views.Home}></Route>
 			<Route path="/login" component={views.Login}></Route>
 			<Route path="/signup" component={views.Signup}></Route>
-			<Route path="/articles" component={views.Articles}></Route>
+			<Route exact path="/articles" component={views.Articles}></Route>
+			<Route path="/articles/:handle" component={views.Article}></Route>
 			<Route path="/postArticle" component={views.PostArticle}></Route>
 			<Route component={views.NotFound}></Route>
 		</Switch>

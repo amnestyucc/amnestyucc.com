@@ -89,7 +89,8 @@ export default class ArticlesContainer extends React.Component {
 								imageUrl: url,
 								date: Article.date,
 								author: Article.author,
-								url: this.getUrl(Article.title, Article.author)
+								url: this.getUrl(Article.title, Article.author),
+								body: Article.body
 							};
 							articles.push(articleobj);
 						})
