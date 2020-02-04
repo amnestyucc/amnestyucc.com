@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import {
 	active,
@@ -10,9 +10,9 @@ import {
 	bar3,
 	change,
 	ulActive,
-	navListItems
-} from "./styles.module.scss";
-import "../../styles/styles.scss";
+	navListItems,
+} from './styles.module.scss';
+import '../../styles/styles.scss';
 
 const navlinkClassNames = [];
 
@@ -24,16 +24,16 @@ const Navbar = ({ activeLink }) => {
 
 	useEffect(() => {
 		switch (activeLink) {
-			case "Home":
+			case 'Home':
 				setHomeIsActive(true);
 				break;
-			case "Articles":
+			case 'Articles':
 				setArticlesIsActive(true);
 				break;
-			case "Contact":
+			case 'Contact':
 				setContactIsActive(true);
 				break;
-			case "Login":
+			case 'Login':
 				setLoginIsActive(true);
 				break;
 			default:
@@ -43,7 +43,7 @@ const Navbar = ({ activeLink }) => {
 
 	function burgerClicked() {
 		document.getElementById(burger).classList.toggle(change);
-		document.getElementById("list").classList.toggle(ulActive);
+		document.getElementById('list').classList.toggle(ulActive);
 	}
 
 	return (
@@ -54,6 +54,14 @@ const Navbar = ({ activeLink }) => {
 					<li className={navListItems}>
 						<Link to="/" className={homeIsActive ? active : navlinkClassNames}>
 							Home
+						</Link>
+					</li>
+					<li className={navListItems}>
+						<Link
+							to="/summit"
+							className={contactIsActive ? active : navlinkClassNames}
+						>
+							Summit
 						</Link>
 					</li>
 					<li className={navListItems}>

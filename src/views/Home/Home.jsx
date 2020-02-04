@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Nav from "../../components/Navbar/NavbarContainer";
+import Nav from '../../components/Navbar/NavbarContainer';
 
 import {
 	title,
 	editorsNote,
 	editorsText,
-	editorsList
-} from "./styles.module.scss";
-import "../../styles/styles.scss";
+	editorsList,
+} from './styles.module.scss';
+import '../../styles/styles.scss';
 
 class Home extends React.Component {
 	render() {
