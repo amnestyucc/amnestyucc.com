@@ -27,6 +27,7 @@
 	display: flex;
 	justify-content: space-evenly;
 	margin-top: 5vh;
+	flex-wrap: wrap;
 }
 
 #articlePreview {
@@ -41,4 +42,8 @@
 
 #articlePreviewTitle {
 	color: white;
+}
+
+.test {
+	width: 30%;
 }
