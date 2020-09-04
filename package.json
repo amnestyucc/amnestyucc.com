@@ -7,7 +7,7 @@
     "firebase": "^7.1.0",
     "jquery": "^3.4.1",
     "mysql": "^2.17.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "popper.js": "^1.15.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
