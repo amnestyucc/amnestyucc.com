@@ -2,7 +2,7 @@
 
 Welcome to the Amnesty UCC repo :)
 
-We have a very standard setup because it's a pretty simple site -- It's made with plain HTML/CSS + JS.
+We have a very standard setup because it's a pretty simple site -- It's made with plain HTML/CSS + JS. Any issues with the layout or content of the website can be directed to Joshua Li, joshua.li@ucc.on.ca
 
 The site is hosted with github pages and AWS Route53. If you happen to have issues with deployment, try to get in contact with Ibrahim Fadel, as it's hosted on his AWS account. Github: IbrahimFadel, Email: ibrahim.m.fadel@gmail.com
 
