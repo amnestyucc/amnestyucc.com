@@ -20,12 +20,23 @@ body{
   height: 500px;
 }
 
+.rowself {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
 /* Clear floats after the columns */
 .rowself:after {
   content: "";
   display: table;
   clear: both;
 }
+
+.rowself-pub:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
 
 .title {
 	font-size: 36px;

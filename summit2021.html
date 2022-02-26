@@ -14,29 +14,12 @@
 </head>
 
 <body>
-	<nav class="nav-extended">
-		<div class="navmod nav-wrapper" style="min-height: 80px;">
-			<a href="index.html" class="logomod brand-logo"
-				style="color: black; font-size: 34px; font-family: 'Playfair Display', serif; letter-spacing: 0.05em;  margin-left: 5%;">AMNESTY
-				UCC</a>
-			<ul id="nav-mobile" class="right hide-on-med-and-down" style=" margin-right: 7%;">
-				<li><a href="about.html"
-						style="color: black; height: 80px; width: 120px; text-align: center; padding-top: 10px; font-size: 20px; text-decoration: underline;">About</a>
-				</li>
-				<li><a href="publications.html"
-						style="color: black; height: 80px; width: 160px; text-align: center; padding-top: 10px; font-size: 20px; text-decoration: underline;">Publications</a>
-				</li>
-				<li><a href="summit2021.html"
-						style="color: black; height: 80px; width: 120px; text-align: center; padding-top: 10px; font-size: 20px; text-decoration: underline;">Summit</a>
-				</li>
-				<li><a href="https://www.instagram.com/ucc_amnesty/"
-						style="color: black; height: 80px; width: 120px; text-align: center; padding-top: 10px; font-size: 20px; text-decoration: underline;">Instagram</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
+	<script type="text/javascript" src="assets/components/header.js"></script>
+	<script>customElements.define('main-header', Header);</script>
+	<main-header></main-header>
 
-	<div class="title" style="margin-top: 2%;">Amnesty Summit 2021 - Truth and Reconciliation <span style="color: red">[COMPLETED]</span></div>
+	<div class="title" style="margin-top: 2%;">Amnesty Summit 2021 - Truth and Reconciliation <span
+			style="color: red">[COMPLETED]</span></div>
 	<hr class="solid">
 	<div style="margin-left: 7%; margin-top: 3%; margin-right: 12%; line-height: 1.4">
 		<p style="font-size: 16px">On <span style="color: red">Saturday, May 1st</span>, the Amnesty International Club
@@ -112,19 +95,22 @@
 	</div>
 
 	<p style="font-size: 24px; margin-left: 7%; margin-top: 3%;"><b><u>Student-Penned Articles</u></b></p>
-	
+
 
 	<div class="col s8 m7 l2" style="width: 80%; margin-left: 7%;">
 		<div class="card horizontal">
-		<div class="card-image">
-			<img style="width:380px; height: 200px; object-fit: cover;" src="https://i.cbc.ca/1.1990062.1406484848!/httpImage/image.jpg_gen/derivatives/16x9_780/hi-residential-schools-852.jpg">
-		</div>
-		<div class="card-stacked">
-			<div class="card-content">
-			<a href="articles/pSenstPresent.html" style="color: black;"><h5><u>Present Effects of Colonialism on Indigenous Education in Canada</u></h5></a>
-			<p>By Preston Senst, Truth and Reconciliation Summit</p>
+			<div class="card-image">
+				<img style="width:380px; height: 200px; object-fit: cover;"
+					src="https://i.cbc.ca/1.1990062.1406484848!/httpImage/image.jpg_gen/derivatives/16x9_780/hi-residential-schools-852.jpg">
 			</div>
-		</div>
+			<div class="card-stacked">
+				<div class="card-content">
+					<a href="articles/pSenstPresent.html" style="color: black;">
+						<h5><u>Present Effects of Colonialism on Indigenous Education in Canada</u></h5>
+					</a>
+					<p>By Preston Senst, Truth and Reconciliation Summit</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="col s8 m7 l2" style="width: 80%; margin-left: 7%;">
@@ -203,14 +189,9 @@
 				Geographic - Indigenous Peoples Atlas of Canada</a></p>
 	</div>
 
-	<div class="footerself">
-		<h1 style="font-size: 26px">UCC Amnesty International Club</h1>
-		<h1 style="font-size: 18px; margin-top: 0px">Contact: <a
-				href="mailto:robbie.evans@ucc.on.ca">robbie.evans@ucc.on.ca</a></h1>
-		<h1 style="font-size: 18px; margin-top: 10px">Website by Joshua Li and Ibrahim Fadel
-		</h1>
-		<h1 style="font-size: 18px; margin-top: 0px">&copy; 2020</h1>
-	</div>
+	<script type="text/javascript" src="assets/components/footer.js"></script>
+	<script>customElements.define('main-footer', Footer);</script>
+	<main-footer></main-footer>
 
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script>
